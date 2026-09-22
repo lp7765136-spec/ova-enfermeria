@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>OVA Elegante - IAMII | Enfermería</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600;650;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="pantalla-inicio" class="pantalla activa">
+        <div class="inicio-texto">
+            <span class="eyebrow">Proyecto de enfermería</span>
+            <h1>El arte de cuidar</h1>
+            <h2>Estrategia IAMII</h2>
+            <p class="lead">Un recorrido interactivo por la política de Instituciones Amigas de la Mujer y la Infancia, para acompañar a las gestantes y a sus bebés con un cuidado humanizado y basado en evidencia.</p>
+            <button id="btnIniciar" class="btn-principal">Explorar el OVA</button>
+            <p class="autor">Diseñado para estudiantes de Enfermería</p>
+        </div>
+        <div class="inicio-imagen">
+            <img src="https://images.unsplash.com/photo-1634290996327-099de799f602?auto=format&fit=crop&w=1200&q=80" alt="Madre sosteniendo a su bebé recién nacido">
+        </div>
+    </div>
+
+    <div id="ova-container" class="pantalla">
+        <button id="btnHome" class="btn-home" aria-label="Volver a la pantalla de inicio">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V10"/></svg>
+            Inicio
+        </button>
+
+        <header>
+            <div class="header-top"><span>OVA Enfermería</span><span>IAMII</span></div>
+            <h2>Estrategia IAMII: cuidado humanizado</h2>
+            <div id="barra-progreso"><div id="progreso"></div></div>
+        </header>
+
+        <div class="cuerpo-ova">
+            <nav class="tabs-modulos" aria-label="Módulos del OVA">
+                <button class="tab-modulo" data-modulo="1"><span class="num">01</span>Objetivos</button>
+                <button class="tab-modulo" data-modulo="2"><span class="num">02</span>Estrategia IAMII</button>
+                <button class="tab-modulo" data-modulo="3"><span class="num">03</span>El valor de cuidar</button>
+                <button class="tab-modulo" data-modulo="4"><span class="num">04</span>Zona de juegos</button>
+                <button class="tab-modulo" data-modulo="5"><span class="num">05</span>Evaluación final</button>
+            </nav>
+
+            <div class="contenido-modulos">
+                <section class="modulo" id="modulo1">
+                    <h3>Objetivos de aprendizaje</h3>
+                    <p class="subtitulo">Al finalizar este OVA serás capaz de:</p>
+                    <div class="lista-objetivos">
+                        <div class="objetivo"><div class="icono">💡</div><div><h4>Comprender IAMII</h4><p>Conocer la política nacional para mejorar la salud materna e infantil.</p></div></div>
+                        <div class="objetivo"><div class="icono">🤱</div><div><h4>Promover lactancia</h4><p>Aplicar los 10 pasos para una lactancia materna exitosa y exclusiva.</p></div></div>
+                        <div class="objetivo"><div class="icono">❤️</div><div><h4>Cuidar con humanidad</h4><p>Brindar un cuidado con empatía, respeto y enfoque integral.</p></div></div>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1634290996327-099de799f602?auto=format&fit=crop&w=1000&q=80" class="img-contenido" alt="Madre y recién nacido en contacto piel a piel">
+                </section>
+
+                <section class="modulo" id="modulo2">
+                    <h3>Estrategia IAMII</h3>
+                    <div class="caja-elegante">¿Qué es IAMII? Es una estrategia del Ministerio de Salud que certifica a las instituciones que brindan atención integral, humanizada y de calidad a la mujer y la infancia.</div>
+                    <div class="video-box">
+                        <h4>Video 1 · IAMII explicado</h4>
+                        <video controls poster="https://images.unsplash.com/photo-1634290996327-099de799f602?auto=format&fit=crop&w=1000&q=80"><source src="videos/video1.mp4" type="video/mp4"></video>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1570028003849-17e995b95147?auto=format&fit=crop&w=1000&q=80" class="img-contenido" alt="Madre amamantando a su bebé">
+                    <h4 style="font-family:'Inter',sans-serif;font-weight:650;margin-bottom:6px;">Los 10 pasos — infografías interactivas</h4>
+                    <div class="acordeon">
+                        <button class="acordeon-btn"><span>01–03</span> Política y educación <span>+</span></button>
+                        <div class="acordeon-cont"><p>Política escrita, capacitación a todo el personal, información a gestantes sobre lactancia.</p></div>
+                        <button class="acordeon-btn"><span>04–06</span> Parto y lactancia <span>+</span></button>
+                        <div class="acordeon-cont"><p>Contacto piel a piel por 60 min, enseñar a amamantar, solo leche materna.</p></div>
+                        <button class="acordeon-btn"><span>07–10</span> Alojamiento y apoyo <span>+</span></button>
+                        <div class="acordeon-cont"><p>Alojamiento conjunto 24h, libre demanda, no biberones ni chupos, grupos de apoyo al egreso.</p></div>
+                    </div>
+                </section>
+
+                <section class="modulo" id="modulo3">
+                    <h3>El valor de cuidar</h3>
+                    <div class="video-box">
+                        <h4>Video 2 · El valor del cuidado de enfermería</h4>
+                        <video controls poster="https://images.unsplash.com/photo-1517120026326-d87759a7b63b?auto=format&fit=crop&w=1000&q=80"><source src="videos/video2.mp4" type="video/mp4"></video>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1517120026326-d87759a7b63b?auto=format&fit=crop&w=1000&q=80" class="img-contenido" alt="Personal de enfermería en un pasillo hospitalario">
+                    <div class="caja-elegante">"Cuidar no es solo hacer procedimientos, es estar presente, escuchar y humanizar" — esencia de enfermería</div>
+                </section>
+
+                <section class="modulo" id="modulo4">
+                    <h3>Zona de juegos dinámicos</h3>
+                    <div class="juego-box">
+                        <h4>Juego 1 · Arrastra y une</h4>
+                        <div class="drag-container">
+                            <div class="draggable" draggable="true" data-match="piel">Piel a piel</div>
+                            <div class="draggable" draggable="true" data-match="lactancia">Lactancia exclusiva</div>
+                        </div>
+                        <div class="drop-container">
+                            <div class="dropzone" data-accept="piel">Paso 4: contacto ____ inmediato</div>
+                            <div class="dropzone" data-accept="lactancia">Paso 6: solo ____ por 6 meses</div>
+                        </div>
+                        <div class="fila-acciones">
+                            <button id="btnResetJuego1" class="btn-secundario">↺ Borrar selección</button>
+                        </div>
+                        <p id="juego1-retro"></p>
+                    </div>
+                    <div class="juego-box">
+                        <h4>Juego 2 · Caso clínico IAMII</h4>
+                        <p style="margin-bottom:14px;color:var(--ink-soft);">Madre con pezón agrietado quiere dejar de lactar.</p>
+                        <button class="opcion" data-puntos="0">A) Dar biberón</button>
+                        <button class="opcion" data-puntos="100">B) Corregir agarre, postura y dar apoyo emocional</button>
+                        <button class="opcion" data-puntos="0">C) Ignorarla</button>
+                        <p id="retro-caso"></p>
+                        <p id="puntos">⭐ Puntos: 0</p>
+                    </div>
+                </section>
+
+                <section class="modulo" id="modulo5">
+                    <h3>Evaluación final — 10 preguntas</h3>
+                    <form id="quiz">
+                        <div class="pregunta"><p><b>1. ¿Qué significa IAMII?</b></p><label><input type="radio" name="p1" value="1"> Instituciones Amigas de la Mujer y la Infancia con Enfoque Integral</label><br><label><input type="radio" name="p1" value="0"> Institución de Amigos</label></div>
+                        <div class="pregunta"><p><b>2. Objetivo principal de IAMII:</b></p><label><input type="radio" name="p2" value="1"> Mejorar atención materna e infantil y promover lactancia</label><br><label><input type="radio" name="p2" value="0"> Solo atender partos</label></div>
+                        <div class="pregunta"><p><b>3. Contacto piel a piel:</b></p><label><input type="radio" name="p3" value="1"> Mínimo 60 min inmediato</label><br><label><input type="radio" name="p3" value="0"> 5 min</label></div>
+                        <div class="pregunta"><p><b>4. Paso 7 de IAMII:</b></p><label><input type="radio" name="p4" value="1"> Alojamiento conjunto 24h</label><br><label><input type="radio" name="p4" value="0"> Separar al bebé</label></div>
+                        <div class="pregunta"><p><b>5. ¿Biberón y chupos?</b></p><label><input type="radio" name="p5" value="1"> No, están prohibidos</label><br><label><input type="radio" name="p5" value="0"> Sí</label></div>
+                        <div class="pregunta"><p><b>6. La lactancia debe ser:</b></p><label><input type="radio" name="p6" value="1"> A libre demanda</label><br><label><input type="radio" name="p6" value="0"> Cada 6 horas</label></div>
+                        <div class="pregunta"><p><b>7. Rol de enfermería:</b></p><label><input type="radio" name="p7" value="1"> Educar, apoyar y liderar</label><br><label><input type="radio" name="p7" value="0"> Solo inyectar</label></div>
+                        <div class="pregunta"><p><b>8. El valor de cuidar es:</b></p><label><input type="radio" name="p8" value="1"> Técnica, empatía y respeto</label><br><label><input type="radio" name="p8" value="0"> Solo procedimientos</label></div>
+                        <div class="pregunta"><p><b>9. Lactancia exclusiva hasta:</b></p><label><input type="radio" name="p9" value="1"> 6 meses</label><br><label><input type="radio" name="p9" value="0"> 1 mes</label></div>
+                        <div class="pregunta"><p><b>10. Paso 10 de IAMII:</b></p><label><input type="radio" name="p10" value="1"> Grupos de apoyo y seguimiento</label><br><label><input type="radio" name="p10" value="0"> No hacer seguimiento</label></div>
+                        <button type="button" id="btnEvaluar" class="btn-principal" style="background:var(--pine); color:#fff; box-shadow:none; margin-top:6px;">Enviar evaluación final</button>
+                        <p id="resultado-final"></p>
+                    </form>
+                </section>
+            </div>
+        </div>
+
+        <div class="navegacion">
+            <button id="btnAtras">← Atrás</button>
+            <span id="indicador">Módulo 1 de 5</span>
+            <button id="btnAvanzar">Siguiente →</button>
+        </div>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
