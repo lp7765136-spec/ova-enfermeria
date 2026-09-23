@@ -193,11 +193,47 @@ header{
   display:flex; justify-content:space-between;
   font-size:12px; color:#A9BEB2; margin-bottom:6px;
 }
+.header-fila{
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+}
 header h2{
   color:#FBF8F1;
   font-size:clamp(19px,2.4vw,25px);
   font-style:italic;
   font-weight:520;
+}
+.estrellas-badge{
+  flex:0 0 auto;
+  display:flex; align-items:center; gap:6px;
+  background:rgba(180,131,47,0.18);
+  border:1px solid rgba(180,131,47,0.5);
+  color:var(--ochre-pale);
+  padding:7px 14px;
+  border-radius:100px;
+  font-size:14px;
+  font-weight:700;
+}
+.estrellas-badge.pop{ animation:popEstrella 0.4s ease; }
+@keyframes popEstrella{
+  0%{ transform:scale(1); }
+  40%{ transform:scale(1.3); background:rgba(180,131,47,0.4); }
+  100%{ transform:scale(1); }
+}
+
+/* estrella flotante al ganar puntos */
+.estrella-flotante{
+  position:fixed;
+  pointer-events:none;
+  z-index:200;
+  color:var(--ochre);
+  font-weight:700;
+  font-size:15px;
+  transform:translate(-50%,0);
+  animation:flotarEstrella 0.9s ease forwards;
+}
+@keyframes flotarEstrella{
+  0%{ opacity:1; transform:translate(-50%,0) scale(1); }
+  100%{ opacity:0; transform:translate(-50%,-46px) scale(1.15); }
 }
 #barra-progreso{
   width:100%; height:4px;
@@ -352,8 +388,55 @@ header h2{
   border-radius:var(--radius-m);
   padding:26px;
   margin-bottom:24px;
+  transition:transform 0.25s ease, box-shadow 0.25s ease;
 }
-.juego-box h4{ font-family:'Fraunces',serif; font-style:italic; font-size:19px; margin-bottom:14px; }
+.juego-box:hover{ transform:translateY(-3px); box-shadow:var(--shadow); }
+.juego-box h4{ font-family:'Fraunces',serif; font-style:italic; font-size:19px; }
+.juego-header{ display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:14px; }
+.juego-recompensa{
+  font-size:12px; font-weight:700; color:var(--ochre);
+  background:var(--ochre-pale);
+  padding:4px 12px; border-radius:100px;
+  white-space:nowrap;
+}
+
+.resumen-juegos{
+  display:flex; align-items:center; justify-content:space-between;
+  background:var(--pine-pale);
+  border-radius:var(--radius-s);
+  padding:16px 22px;
+  font-size:14.5px; color:var(--pine-dark); font-weight:600;
+}
+.resumen-juegos strong{ font-size:20px; color:var(--ochre); }
+
+/* ---- juego 3: verdadero o falso ---- */
+.vf-progreso{ font-size:12.5px; color:var(--ink-soft); margin-bottom:16px; }
+.vf-pregunta{
+  border:1px solid var(--line);
+  border-radius:var(--radius-s);
+  padding:16px 18px;
+  margin-bottom:12px;
+  transition:border-color 0.2s, background 0.2s;
+}
+.vf-pregunta p{ font-size:14.5px; margin-bottom:12px; }
+.vf-botones{ display:flex; gap:10px; }
+.vf-btn{
+  flex:1;
+  padding:10px 0;
+  border-radius:8px;
+  border:1px solid var(--line);
+  background:var(--paper);
+  font-weight:650;
+  font-size:13.5px;
+  cursor:pointer;
+  color:var(--ink);
+  transition:transform 0.12s ease;
+}
+.vf-btn:hover{ transform:translateY(-2px); border-color:var(--pine); }
+.vf-btn:disabled{ cursor:default; }
+.vf-pregunta.acertada{ border-color:var(--pine); background:var(--pine-pale); }
+.vf-pregunta.fallada{ border-color:var(--rose); background:var(--rose-pale); }
+.vf-retro{ font-size:13px; font-weight:600; margin-top:10px; }
 
 .drag-container{ display:flex; gap:12px; flex-wrap:wrap; margin-bottom:18px; }
 .draggable{
@@ -365,7 +448,9 @@ header h2{
   font-weight:650;
   font-size:13.5px;
   cursor:grab;
+  transition:transform 0.15s ease;
 }
+.draggable:hover{ transform:translateY(-2px) scale(1.03); }
 .dropzone{
   border:1.5px dashed var(--line);
   padding:16px 18px;
@@ -374,9 +459,14 @@ header h2{
   background:var(--paper);
   font-size:14.5px;
   color:var(--ink-soft);
-  transition:background 0.2s, border-color 0.2s;
+  transition:background 0.2s, border-color 0.2s, transform 0.2s;
 }
-.dropzone.correct{ border-style:solid; border-color:var(--pine); background:var(--pine-pale); color:var(--pine-dark); }
+.dropzone.correct{ border-style:solid; border-color:var(--pine); background:var(--pine-pale); color:var(--pine-dark); animation:acierto 0.4s ease; }
+@keyframes acierto{
+  0%{ transform:scale(1); }
+  40%{ transform:scale(1.03); }
+  100%{ transform:scale(1); }
+}
 
 .fila-acciones{ display:flex; align-items:center; gap:14px; margin-top:6px; flex-wrap:wrap; }
 .btn-secundario{
@@ -404,6 +494,10 @@ header h2{
   color:var(--ink);
 }
 .opcion:hover{ border-color:var(--pine); background:var(--pine-pale); }
+.opcion:disabled{ cursor:default; opacity:0.55; }
+.opcion:disabled:hover{ border-color:var(--line); background:var(--paper); }
+.opcion.correcta{ border-color:var(--pine); background:var(--pine-pale); opacity:1; }
+.opcion.incorrecta{ border-color:var(--rose); background:var(--rose-pale); opacity:1; }
 
 #puntos{ margin-top:14px; font-weight:650; color:var(--ochre); }
 
