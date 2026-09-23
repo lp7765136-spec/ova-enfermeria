@@ -32,7 +32,10 @@
 
         <header>
             <div class="header-top"><span>OVA Enfermería</span><span>IAMII</span></div>
-            <h2>Estrategia IAMII: cuidado humanizado</h2>
+            <div class="header-fila">
+                <h2>Estrategia IAMII: cuidado humanizado</h2>
+                <div class="estrellas-badge" id="estrellasBadge" aria-live="polite">⭐ <span id="estrellasValor">0</span></div>
+            </div>
             <div id="barra-progreso"><div id="progreso"></div></div>
         </header>
 
@@ -88,8 +91,9 @@
 
                 <section class="modulo" id="modulo4">
                     <h3>Zona de juegos dinámicos</h3>
+
                     <div class="juego-box">
-                        <h4>Juego 1 · Arrastra y une</h4>
+                        <div class="juego-header"><h4>Juego 1 · Arrastra y une</h4><span class="juego-recompensa">⭐ x1 por acierto</span></div>
                         <div class="drag-container">
                             <div class="draggable" draggable="true" data-match="piel">Piel a piel</div>
                             <div class="draggable" draggable="true" data-match="lactancia">Lactancia exclusiva</div>
@@ -103,14 +107,26 @@
                         </div>
                         <p id="juego1-retro"></p>
                     </div>
+
                     <div class="juego-box">
-                        <h4>Juego 2 · Caso clínico IAMII</h4>
+                        <div class="juego-header"><h4>Juego 2 · Caso clínico IAMII</h4><span class="juego-recompensa">⭐ x3 por acierto</span></div>
                         <p style="margin-bottom:14px;color:var(--ink-soft);">Madre con pezón agrietado quiere dejar de lactar.</p>
-                        <button class="opcion" data-puntos="0">A) Dar biberón</button>
-                        <button class="opcion" data-puntos="100">B) Corregir agarre, postura y dar apoyo emocional</button>
-                        <button class="opcion" data-puntos="0">C) Ignorarla</button>
+                        <button class="opcion" data-estrellas="0">A) Dar biberón</button>
+                        <button class="opcion" data-estrellas="3">B) Corregir agarre, postura y dar apoyo emocional</button>
+                        <button class="opcion" data-estrellas="0">C) Ignorarla</button>
                         <p id="retro-caso"></p>
-                        <p id="puntos">⭐ Puntos: 0</p>
+                    </div>
+
+                    <div class="juego-box">
+                        <div class="juego-header"><h4>Juego 3 · Verdadero o falso</h4><span class="juego-recompensa">⭐ x1 por acierto</span></div>
+                        <p style="margin-bottom:6px;color:var(--ink-soft);">Marca si cada afirmación sobre IAMII es verdadera o falsa.</p>
+                        <p class="vf-progreso" id="vfProgreso">0 de 6 respondidas</p>
+                        <div id="listaVF"></div>
+                    </div>
+
+                    <div class="resumen-juegos">
+                        <span>⭐ Estrellas acumuladas en esta zona</span>
+                        <strong id="puntos">0</strong>
                     </div>
                 </section>
 
